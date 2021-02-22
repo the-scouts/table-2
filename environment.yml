@@ -1,0 +1,22 @@
+name: table-2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.9
+  - pip
+
+  # Transformation
+  - pandas
+  - pyarrow
+
+  # Type validation
+  - pydantic
+
+  # Testing
+  - pytest
+
+  # Development (Tools, Style, Linting)
+  - ipython
+  - black
+  - isort>=5
