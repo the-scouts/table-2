@@ -58,8 +58,9 @@ TYPES_TRUSTEE = Literal[
 ]
 TYPES_DISCLOSURE = Literal["Yes", "No", "Yes (SV)", None]
 TYPES_REVIEW = Literal["Yes", "No", "N/A", None]
+# GS: Getting Started; TO: Training Obligation; OP: Opt-In; NA: Not Applicable
 TYPES_TRAINING = Literal["GS", "NA", "TO"]
-TYPES_MODULE_TRUSTEE_INTRODUCTION = Literal["OP", "NA"]  # TODO ????? this doesn't seem right
+TYPES_MODULE_TRUSTEE_INTRODUCTION = Literal["OP", "NA", "GS", "TO"]
 TYPES_GETTING_STARTED = Literal["GS", "NA"]
 TYPES_TRAINING_OBLIGATION = Literal["TO", "NA"]
 TYPES_TRAINING_DEADLINE = Literal["3Y", "5M", None]
@@ -92,7 +93,7 @@ class Table2Roles(pydantic.BaseModel):
     location_headquarters: list[bool] = []
     location_uk_contingent: list[bool] = []
     module_1: list[TYPES_TRAINING] = []
-    module_trustee_introduction: list[str] = []
+    module_trustee_introduction: list[TYPES_MODULE_TRUSTEE_INTRODUCTION] = []
     module_2: list[TYPES_TRAINING] = []
     module_3: list[TYPES_GETTING_STARTED] = []
     module_4: list[TYPES_TRAINING] = []

@@ -218,10 +218,10 @@ def preprocess_roles(roles: pd.DataFrame) -> pd.DataFrame:
         if module != "opts-in to trustee":
             safe_module = f"module_{module.lower().replace(' ', '_').replace('&', '').replace('[', '').replace(']', '')}"
             mark = "TO"  # Training Obligation
+            roles[safe_module] = "NA"  # trustee introduction already initialised
         else:
             safe_module = "module_trustee_introduction"
             mark = "OP"  # OPt in
-        roles[safe_module] = "NA"
         training_mask = [any(module in training_mod for training_mod in training_lst) for training_lst in roles["training"]]
         roles.loc[training_mask, safe_module] = mark
         roles.loc[[three_years(training_lst) for training_lst in roles["training"].tolist()], "training_deadline"] = "3Y"
