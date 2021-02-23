@@ -27,15 +27,7 @@ TYPES_SUBCATEGORY = Literal[
     "SASUs",
     "Youth Commissioners",
 ]
-TYPES_HIERARCHY = Literal[
-    "Group",
-    "District",
-    "Headquarters",
-    "County",
-    "Region (England, Wales)",
-    "Country",
-    "Region (England)",
-]
+TYPES_HIERARCHY = Literal["Group", "District", "Headquarters", "County", "Region (England, Wales)", "Country", "Region (England)"]
 TYPES_COMPASS_CLASS = Literal[
     "Leader",
     "Commissioner",
@@ -67,9 +59,7 @@ TYPES_TRUSTEE = Literal[
 TYPES_DISCLOSURE = Literal["Yes", "No", "Yes (SV)", None]
 TYPES_REVIEW = Literal["Yes", "No", "N/A", None]
 TYPES_TRAINING = Literal["GS", "NA", "TO"]
-TYPES_MODULE_TRUSTEE_INTRODUCTION = Literal[
-    "OP", "NA"
-]  # TODO ????? this doesn't seem right
+TYPES_MODULE_TRUSTEE_INTRODUCTION = Literal["OP", "NA"]  # TODO ????? this doesn't seem right
 TYPES_GETTING_STARTED = Literal["GS", "NA"]
 TYPES_TRAINING_OBLIGATION = Literal["TO", "NA"]
 TYPES_TRAINING_DEADLINE = Literal["3Y", "5M", None]

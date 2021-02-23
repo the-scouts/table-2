@@ -15,7 +15,9 @@ def filter_roles(roles: pd.DataFrame, keys: schema.Table2Roles) -> pd.DataFrame:
     return roles[roles[keys.keys()].isin(keys).all(axis=1)]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    # (https://youtrack.jetbrains.com/issue/PY-41268)
+    # noinspection PyTypeChecker
     filter_keys = schema.Table2Roles(category=["Support"], subcategory=["SASUs"], hierarchy=["County"])
     r = filter_roles(load_roles(), filter_keys)
     print()
